@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- ✏️ UPDATE: UPDATE: Replace placeholder phone, address, and URL with your real details -->
+  <title>Graphic Lab, Inc. | Graphic Design & Marketing Agency | Raleigh, NC</title>
+  <meta name="description" content="Graphic Lab, Inc. is Raleigh's premier graphic design and marketing agency. Expert brochure design, magazine design, and website design that grows your business.">
+  <meta name="keywords" content="graphic design Raleigh NC, marketing agency Raleigh, brochure design, magazine design, website design Raleigh">
+  <meta property="og:title" content="Graphic Lab, Inc. | Graphic Design & Marketing | Raleigh, NC">
+  <meta property="og:description" content="Bold, strategic design that elevates your brand. Raleigh's go-to graphic design and marketing studio.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.graphiclab.com/">
+  <link rel="canonical" href="https://www.graphiclab.com/">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Local Business Schema — ✏️ UPDATE address, phone, URL -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Graphic Lab, Inc.",
+    "description": "Raleigh's premier graphic design and marketing agency specializing in brochure design, magazine design, and website design.",
+    "url": "https://www.graphiclab.com",
+    "telephone": "+17045550100",
+    "email": "hello@graphiclab.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "123 Design Drive, Suite 200",
+      "addressLocality": "Raleigh",
+      "addressRegion": "NC",
+      "postalCode": "28202",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "35.7796",
+      "longitude": "-78.6382"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "17:00" }
+    ],
+    "sameAs": [
+      "https://www.linkedin.com/company/graphiclabinc",
+      "https://www.facebook.com/graphiclabinc"
+    ],
+    "hasMap": "https://maps.google.com/?q=Graphic+Lab+Inc+Raleigh+NC",
+    "priceRange": "$$",
+    "areaServed": { "@type": "City", "name": "Raleigh" },
+    "serviceArea": { "@type": "AdministrativeArea", "name": "North Carolina" }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="logo.svg" alt="Graphic Lab, Inc." width="180" height="49">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-menu">
+          <a href="brochure-design.html">📄 Brochure Design</a>
+          <a href="magazine-design.html">📖 Magazine Design</a>
+          <a href="website-design.html">💻 Website Design</a>
+        </div>
+      </li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary nav-cta">Get a Free Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="brochure-design.html">Brochure Design</a>
+  <a href="magazine-design.html">Magazine Design</a>
+  <a href="website-design.html">Website Design</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<style>
+.hero-full {
+  position: relative;
+  width: 100%;
+  min-height: 92vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0a1f3d;
+}
+.hero-bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgba(10,31,61,0.97) 0%,
+    rgba(10,31,61,0.88) 45%,
+    rgba(10,31,61,0.35) 75%,
+    rgba(10,31,61,0.10) 100%
+  );
+}
+.hero-full .container { position: relative; z-index: 2; }
+.hero-full .hero-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(0,159,204,0.18); color: #5dd8f5;
+  border: 1px solid rgba(0,159,204,0.35);
+  padding: 6px 18px; border-radius: 980px;
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; margin-bottom: 28px;
+}
+.hero-full h1 { color: #fff; }
+.hero-full h1 .accent-teal { color: #009FCC; }
+.hero-full h1 .accent-green { color: #78B926; }
+.hero-full .hero-sub { color: rgba(255,255,255,0.75); max-width: 540px; font-size: 1.18rem; line-height: 1.7; margin-bottom: 44px; }
+.hero-stat-row { display: flex; gap: 40px; margin-top: 52px; padding-top: 36px; border-top: 1px solid rgba(255,255,255,0.12); flex-wrap: wrap; }
+.hero-stat-num { font-size: 1.7rem; font-weight: 800; line-height: 1; }
+.hero-stat-lbl { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 5px; }
+/* Floating card animations */
+@keyframes floatA { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-12px)} }
+@keyframes floatB { 0%,100%{transform:translateY(0px)} 50%{transform:translateY(-8px)} }
+@keyframes floatC { 0%,100%{transform:translateY(-6px)} 50%{transform:translateY(6px)} }
+@keyframes pulse-ring { 0%{opacity:0.6;r:28} 100%{opacity:0;r:52} }
+@keyframes bar-grow { from{height:0} to{height:var(--h)} }
+@media(max-width:768px){
+  .hero-full { min-height: 100vh; padding: 100px 0 60px; }
+  .hero-overlay { background: rgba(10,31,61,0.88); }
+  .hero-stat-row { gap: 24px; }
+}
+</style>
+
+<section class="hero-full">
+  <!-- ── Full-width SVG Marketing Background ── -->
+  <svg class="hero-bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <defs>
+      <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#070f1f"/>
+        <stop offset="50%" stop-color="#0d2040"/>
+        <stop offset="100%" stop-color="#0a2a35"/>
+      </linearGradient>
+      <linearGradient id="tealGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#009FCC"/>
+        <stop offset="100%" stop-color="#006fa3"/>
+      </linearGradient>
+      <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#78B926"/>
+        <stop offset="100%" stop-color="#5e9220"/>
+      </linearGradient>
+      <linearGradient id="navyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#1A3A6C"/>
+        <stop offset="100%" stop-color="#0f2347"/>
+      </linearGradient>
+      <linearGradient id="cardGrad1" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#0d2a4a"/>
+        <stop offset="100%" stop-color="#112e52"/>
+      </linearGradient>
+      <filter id="glow">
+        <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+        <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="softblur">
+        <feGaussianBlur stdDeviation="40"/>
+      </filter>
+      <pattern id="dots" x="0" y="0" width="40" height="40" patternUnits="userSpaceOnUse">
+        <circle cx="20" cy="20" r="1.2" fill="rgba(0,159,204,0.18)"/>
+      </pattern>
+    </defs>
+
+    <!-- Base background -->
+    <rect width="1440" height="900" fill="url(#bgGrad)"/>
+
+    <!-- Ambient glow blobs -->
+    <ellipse cx="900" cy="200" rx="380" ry="260" fill="#009FCC" opacity="0.06" filter="url(#softblur)"/>
+    <ellipse cx="1200" cy="600" rx="300" ry="220" fill="#78B926" opacity="0.07" filter="url(#softblur)"/>
+    <ellipse cx="1050" cy="420" rx="200" ry="180" fill="#1A3A6C" opacity="0.2" filter="url(#softblur)"/>
+
+    <!-- Dot grid -->
+    <rect width="1440" height="900" fill="url(#dots)"/>
+
+    <!-- ── Large swoosh shapes ── -->
+    <!-- Main teal swoosh -->
+    <path d="M 780 -60 Q 1100 200 1050 500 Q 1000 780 1300 950 L 1440 950 L 1440 -60 Z"
+          fill="url(#tealGrad)" opacity="0.07"/>
+    <!-- Green accent swoosh -->
+    <path d="M 1000 -60 Q 1200 300 1180 600 Q 1160 800 1440 900 L 1440 -60 Z"
+          fill="url(#greenGrad)" opacity="0.05"/>
+    <!-- Diagonal grid lines -->
+    <line x1="750" y1="0" x2="750" y2="900" stroke="rgba(0,159,204,0.06)" stroke-width="1"/>
+    <line x1="900" y1="0" x2="900" y2="900" stroke="rgba(0,159,204,0.04)" stroke-width="1"/>
+    <line x1="1050" y1="0" x2="1050" y2="900" stroke="rgba(0,159,204,0.04)" stroke-width="1"/>
+    <line x1="1200" y1="0" x2="1200" y2="900" stroke="rgba(0,159,204,0.03)" stroke-width="1"/>
+    <line x1="600" y1="0" x2="1440" y2="700" stroke="rgba(120,185,38,0.05)" stroke-width="1"/>
+    <line x1="680" y1="0" x2="1440" y2="560" stroke="rgba(0,159,204,0.04)" stroke-width="1"/>
+
+    <!-- ══════════════════════════════════════════ -->
+    <!--   FLOATING MARKETING UI CARDS             -->
+    <!-- ══════════════════════════════════════════ -->
+
+    <!-- CARD 1: Growth Chart — top right -->
+    <g transform="translate(880, 80)" style="animation:floatA 6s ease-in-out infinite">
+      <rect width="260" height="175" rx="16" fill="url(#cardGrad1)" stroke="rgba(0,159,204,0.25)" stroke-width="1.5"/>
+      <!-- card header -->
+      <text x="20" y="28" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" font-weight="600" letter-spacing="1">BRAND GROWTH</text>
+      <text x="20" y="50" font-family="system-ui,sans-serif" font-size="22" fill="#fff" font-weight="800">↑ 312%</text>
+      <text x="100" y="50" font-family="system-ui,sans-serif" font-size="10" fill="#78B926" font-weight="700">▲ vs last year</text>
+      <!-- bar chart -->
+      <g transform="translate(18,65)">
+        <rect x="0"   y="60" width="22" height="40" rx="4" fill="#009FCC" opacity="0.4"/>
+        <rect x="30"  y="40" width="22" height="60" rx="4" fill="#009FCC" opacity="0.55"/>
+        <rect x="60"  y="30" width="22" height="70" rx="4" fill="#009FCC" opacity="0.7"/>
+        <rect x="90"  y="10" width="22" height="90" rx="4" fill="#009FCC" opacity="0.85"/>
+        <rect x="120" y="0"  width="22" height="100" rx="4" fill="url(#tealGrad)"/>
+        <rect x="150" y="20" width="22" height="80"  rx="4" fill="url(#greenGrad)"/>
+        <rect x="180" y="5"  width="22" height="95"  rx="4" fill="url(#tealGrad)"/>
+        <!-- baseline -->
+        <line x1="0" y1="101" x2="210" y2="101" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+      </g>
+    </g>
+
+    <!-- CARD 2: Color Palette — middle right -->
+    <g transform="translate(1170, 220)" style="animation:floatB 7s ease-in-out infinite 1s">
+      <rect width="220" height="140" rx="16" fill="url(#cardGrad1)" stroke="rgba(120,185,38,0.25)" stroke-width="1.5"/>
+      <text x="16" y="26" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" font-weight="600" letter-spacing="1">BRAND PALETTE</text>
+      <!-- Color swatches -->
+      <rect x="16" y="38" width="36" height="36" rx="8"  fill="#009FCC"/>
+      <rect x="60" y="38" width="36" height="36" rx="8"  fill="#78B926"/>
+      <rect x="104" y="38" width="36" height="36" rx="8" fill="#1A3A6C"/>
+      <rect x="148" y="38" width="36" height="36" rx="8" fill="#0F2347"/>
+      <text x="16"  y="92" font-family="system-ui,monospace" font-size="8" fill="rgba(255,255,255,0.4)">#009FCC</text>
+      <text x="60"  y="92" font-family="system-ui,monospace" font-size="8" fill="rgba(255,255,255,0.4)">#78B926</text>
+      <text x="104" y="92" font-family="system-ui,monospace" font-size="8" fill="rgba(255,255,255,0.4)">#1A3A6C</text>
+      <text x="148" y="92" font-family="system-ui,monospace" font-size="8" fill="rgba(255,255,255,0.4)">#0F2347</text>
+      <!-- typography specimen -->
+      <rect x="16" y="102" width="188" height="1" fill="rgba(255,255,255,0.07)"/>
+      <text x="16" y="120" font-family="system-ui,sans-serif" font-size="14" fill="#fff" font-weight="800" letter-spacing="-0.5">Graphic Lab</text>
+      <text x="130" y="120" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">Bold · Modern</text>
+    </g>
+
+    <!-- CARD 3: ROI Donut — lower right -->
+    <g transform="translate(950, 490)" style="animation:floatC 8s ease-in-out infinite 0.5s">
+      <rect width="210" height="185" rx="16" fill="url(#cardGrad1)" stroke="rgba(0,159,204,0.2)" stroke-width="1.5"/>
+      <text x="16" y="26" font-family="system-ui,sans-serif" font-size="10" fill="rgba(255,255,255,0.45)" font-weight="600" letter-spacing="1">CLIENT ROI</text>
+      <!-- Donut chart -->
+      <circle cx="105" cy="105" r="52" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="16"/>
+      <circle cx="105" cy="105" r="52" fill="none" stroke="#009FCC" stroke-width="16" stroke-dasharray="196 327" stroke-dashoffset="82" stroke-linecap="round"/>
+      <circle cx="105" cy="105" r="52" fill="none" stroke="#78B926" stroke-width="16" stroke-dasharray="98 327" stroke-dashoffset="-114" stroke-linecap="round"/>
+      <circle cx="105" cy="105" r="52" fill="none" stroke="#1A3A6C" stroke-width="16" stroke-dasharray="33 327" stroke-dashoffset="-212" stroke-linecap="round"/>
+      <text x="105" y="101" text-anchor="middle" font-family="system-ui,sans-serif" font-size="18" fill="#fff" font-weight="800">3.2×</text>
+      <text x="105" y="117" text-anchor="middle" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)">avg. return</text>
+      <!-- Legend -->
+      <rect x="16" y="162" width="8" height="8" rx="2" fill="#009FCC"/>
+      <text x="28" y="170" font-family="system-ui,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">Web Design</text>
+      <rect x="88" y="162" width="8" height="8" rx="2" fill="#78B926"/>
+      <text x="100" y="170" font-family="system-ui,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">Print</text>
+      <rect x="136" y="162" width="8" height="8" rx="2" fill="#1A3A6C"/>
+      <text x="148" y="170" font-family="system-ui,sans-serif" font-size="8" fill="rgba(255,255,255,0.5)">Brand</text>
+    </g>
+
+    <!-- CARD 4: Active Project ticker — far right -->
+    <g transform="translate(1190, 470)" style="animation:floatA 9s ease-in-out infinite 2s">
+      <rect width="200" height="100" rx="14" fill="url(#cardGrad1)" stroke="rgba(120,185,38,0.2)" stroke-width="1.5"/>
+      <text x="16" y="24" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="600" letter-spacing="1">LIVE PROJECTS</text>
+      <!-- pulse dot -->
+      <circle cx="176" cy="18" r="5" fill="#78B926" opacity="0.9"/>
+      <circle cx="176" cy="18" r="5" fill="#78B926" opacity="0.3">
+        <animate attributeName="r" values="5;12;5" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.6;0;0.6" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <!-- project rows -->
+      <rect x="16" y="35" width="90" height="7" rx="3" fill="rgba(0,159,204,0.5)"/>
+      <rect x="112" y="35" width="40" height="7" rx="3" fill="#78B926" opacity="0.7"/>
+      <rect x="16" y="52" width="70" height="7" rx="3" fill="rgba(0,159,204,0.35)"/>
+      <rect x="92" y="52" width="60" height="7" rx="3" fill="rgba(255,255,255,0.1)"/>
+      <rect x="16" y="69" width="110" height="7" rx="3" fill="rgba(0,159,204,0.25)"/>
+      <rect x="132" y="69" width="30" height="7" rx="3" fill="#1A3A6C" opacity="0.8"/>
+      <text x="16" y="90" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.3)">24 active · 8 review</text>
+    </g>
+
+    <!-- CARD 5: Typography showcase — upper center-right -->
+    <g transform="translate(760, 340)" style="animation:floatB 7.5s ease-in-out infinite 3s">
+      <rect width="185" height="120" rx="14" fill="url(#cardGrad1)" stroke="rgba(0,159,204,0.18)" stroke-width="1.5"/>
+      <text x="16" y="24" font-family="system-ui,sans-serif" font-size="9" fill="rgba(255,255,255,0.4)" font-weight="600" letter-spacing="1">TYPOGRAPHY</text>
+      <text x="16" y="54" font-family="Georgia,serif" font-size="26" fill="#fff" font-weight="400" letter-spacing="-1">Aa Bb</text>
+      <text x="16" y="75" font-family="system-ui,sans-serif" font-size="13" fill="rgba(255,255,255,0.6)" font-weight="700">Display · Body · Label</text>
+      <rect x="16" y="85" width="153" height="1" fill="rgba(255,255,255,0.07)"/>
+      <rect x="16" y="96" width="60" height="6" rx="3" fill="rgba(0,159,204,0.5)"/>
+      <rect x="82" y="96" width="40" height="6" rx="3" fill="rgba(120,185,38,0.5)"/>
+      <rect x="128" y="96" width="40" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+    </g>
+
+    <!-- ── Scattered accent shapes ── -->
+    <!-- Teal circles -->
+    <circle cx="820" cy="820" r="90" fill="#009FCC" opacity="0.04"/>
+    <circle cx="820" cy="820" r="55" fill="none" stroke="#009FCC" stroke-width="1" opacity="0.15"/>
+    <circle cx="820" cy="820" r="20" fill="#009FCC" opacity="0.12"/>
+    <!-- Green triangle accent -->
+    <polygon points="1380,30 1420,30 1400,65" fill="#78B926" opacity="0.2"/>
+    <polygon points="1350,50 1380,50 1365,80" fill="#78B926" opacity="0.1"/>
+    <!-- Teal cross/plus -->
+    <rect x="1405" y="300" width="3" height="30" rx="2" fill="#009FCC" opacity="0.35"/>
+    <rect x="1392" y="313" width="29" height="3" rx="2" fill="#009FCC" opacity="0.35"/>
+    <!-- Small dots accent cluster -->
+    <circle cx="870" cy="685" r="4" fill="#009FCC" opacity="0.3"/>
+    <circle cx="890" cy="700" r="3" fill="#78B926" opacity="0.3"/>
+    <circle cx="858" cy="710" r="2.5" fill="#009FCC" opacity="0.2"/>
+    <circle cx="905" cy="688" r="2" fill="#78B926" opacity="0.2"/>
+    <!-- Pen tool bezier path suggestion -->
+    <path d="M 750 750 Q 850 650 950 720 Q 1050 790 1150 700" fill="none" stroke="rgba(0,159,204,0.12)" stroke-width="2" stroke-dasharray="6 8"/>
+    <!-- Corner bracket decorations -->
+    <path d="M 758 82 L 758 70 L 770 70" fill="none" stroke="rgba(0,159,204,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 1422 818 L 1422 830 L 1410 830" fill="none" stroke="rgba(120,185,38,0.3)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+
+  <!-- Dark gradient overlay (text-side fade) -->
+  <div class="hero-overlay"></div>
+
+  <!-- ── Hero Content ── -->
+  <div class="container">
+    <div style="max-width:780px; padding-top:48px;" class="fade-up">
+      <div class="hero-eyebrow">✦ Raleigh, NC's Design Studio</div>
+      <h1 style="font-size:clamp(3rem,6.5vw,7rem); font-weight:800; letter-spacing:-0.035em; line-height:1.02; margin-bottom:28px; color:#fff;">
+        Design That <span class="accent-teal">Moves</span> Your <span class="accent-green">Business</span> Forward
+      </h1>
+      <p class="hero-sub">
+        Graphic Lab, Inc. delivers bold brochures, stunning magazines, and high-converting websites for businesses in Raleigh and across North Carolina.
+      </p>
+      <div style="display:flex; gap:16px; flex-wrap:wrap; padding-bottom:48px;">
+        <a href="contact.html" class="btn btn-primary btn-lg">Get a Free Quote</a>
+        <a href="portfolio.html" class="btn btn-lg" style="background:rgba(255,255,255,0.1);color:#fff;border:2px solid rgba(255,255,255,0.25);backdrop-filter:blur(8px);">View Our Work →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUSTED BY ═══ -->
+<section class="section-sm bg-off-white">
+  <div class="container text-center">
+    <p class="label" style="margin-bottom:24px;">Trusted by Raleigh businesses</p>
+    <div style="display:flex; gap:48px; justify-content:center; align-items:center; flex-wrap:wrap; opacity:0.5;">
+      <div style="font-size:1.1rem; font-weight:700; color:var(--navy);">Acme Corp</div>
+      <div style="font-size:1.1rem; font-weight:700; color:var(--navy);">Pinecrest Medical</div>
+      <div style="font-size:1.1rem; font-weight:700; color:var(--navy);">Carolina Realty</div>
+      <div style="font-size:1.1rem; font-weight:700; color:var(--navy);">Summit Financial</div>
+      <div style="font-size:1.1rem; font-weight:700; color:var(--navy);">BlueStar Tech</div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ SERVICES ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">What We Do</p>
+      <h2 class="display-lg">Services Built to Grow<br><span class="text-teal">Your Brand</span></h2>
+      <p>From print to digital, we create design assets that attract attention, communicate value, and drive business growth in Raleigh and beyond.</p>
+    </div>
+    <div class="grid-3">
+      <div class="card reveal">
+        <div class="card-icon">📄</div>
+        <h3 class="display-sm" style="margin-bottom:12px;">Brochure Design</h3>
+        <p class="body-md" style="margin-bottom:24px;">Print and digital brochures that capture your brand, communicate your value, and convert prospects into clients. Tri-fold, bi-fold, and custom formats.</p>
+        <a href="brochure-design.html" class="btn btn-secondary" style="padding:10px 20px;font-size:0.88rem;">Learn More →</a>
+      </div>
+      <div class="card reveal delay-1">
+        <div class="card-icon green">📖</div>
+        <h3 class="display-sm" style="margin-bottom:12px;">Magazine Design</h3>
+        <p class="body-md" style="margin-bottom:24px;">Editorial layouts, annual reports, and custom publications that position you as an industry authority. Print-ready and digital editions.</p>
+        <a href="magazine-design.html" class="btn btn-secondary" style="padding:10px 20px;font-size:0.88rem;">Learn More →</a>
+      </div>
+      <div class="card reveal delay-2">
+        <div class="card-icon navy">💻</div>
+        <h3 class="display-sm" style="margin-bottom:12px;">Website Design</h3>
+        <p class="body-md" style="margin-bottom:24px;">Fast, SEO-optimized websites built to rank on Google and convert visitors. Mobile-first design with clean code and measurable results.</p>
+        <a href="website-design.html" class="btn btn-secondary" style="padding:10px 20px;font-size:0.88rem;">Learn More →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ STATS ═══ -->
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-block reveal">
+        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-block reveal delay-1">
+        <div class="stat-number" data-target="12" data-suffix="+">0</div>
+        <div class="stat-label">Years of Experience</div>
+      </div>
+      <div class="stat-block reveal delay-2">
+        <div class="stat-number" data-target="98" data-suffix="%">0</div>
+        <div class="stat-label">Client Satisfaction Rate</div>
+      </div>
+      <div class="stat-block reveal delay-3">
+        <div class="stat-number" data-target="150" data-suffix="+">0</div>
+        <div class="stat-label">Local Raleigh Clients</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ PORTFOLIO PREVIEW ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Our Work</p>
+      <h2 class="display-lg">Recent <span class="text-teal">Portfolio</span> Highlights</h2>
+      <p>A selection of our latest projects for Raleigh businesses, nonprofits, and regional brands.</p>
+    </div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px;" class="reveal">
+      <div class="portfolio-item" style="grid-column:span 2; aspect-ratio:16/9;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#1A3A6C 0%,#009FCC 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;gap:12px;">
+          <div style="font-size:3rem;">📄</div>
+          <div style="font-weight:700;font-size:1.1rem;">Pinecrest Medical Brochure</div>
+          <span style="font-size:0.8rem;opacity:0.7;letter-spacing:0.1em;text-transform:uppercase;">Brochure Design</span>
+        </div>
+        <div class="portfolio-overlay" style="opacity:1;">
+          <h3>Pinecrest Medical Center</h3>
+          <span>Brochure Design</span>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#78B926 0%,#1A3A6C 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;gap:12px;">
+          <div style="font-size:2.5rem;">📖</div>
+          <div style="font-weight:700;">Carolina Living</div>
+          <span style="font-size:0.8rem;opacity:0.7;">Magazine</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>Carolina Living Magazine</h3>
+          <span>Magazine Design</span>
+        </div>
+      </div>
+      <div class="portfolio-item">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#009FCC 0%,#78B926 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;gap:12px;">
+          <div style="font-size:2.5rem;">💻</div>
+          <div style="font-weight:700;">Summit Financial</div>
+          <span style="font-size:0.8rem;opacity:0.7;">Website Design</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>Summit Financial Group</h3>
+          <span>Website Design</span>
+        </div>
+      </div>
+      <div class="portfolio-item" style="grid-column:span 2; aspect-ratio:16/7;">
+        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0F2347 0%,#78B926 100%);display:flex;align-items:center;justify-content:center;flex-direction:column;color:white;gap:12px;">
+          <div style="font-size:3rem;">🏢</div>
+          <div style="font-weight:700;font-size:1.1rem;">BlueStar Annual Report</div>
+          <span style="font-size:0.8rem;opacity:0.7;letter-spacing:0.1em;text-transform:uppercase;">Magazine &amp; Print</span>
+        </div>
+        <div class="portfolio-overlay">
+          <h3>BlueStar Tech Annual Report</h3>
+          <span>Magazine Design</span>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="portfolio.html" class="btn btn-primary btn-lg">View Full Portfolio</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ WHY CHOOSE US ═══ -->
+<section class="section bg-off-white">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:center;">
+      <div class="reveal">
+        <p class="label">Why Graphic Lab</p>
+        <h2 class="display-lg" style="margin-bottom:20px;">Raleigh's Most<br><span class="text-teal">Trusted</span> Design Studio</h2>
+        <p class="body-lg" style="margin-bottom:36px;">We combine strategic thinking with world-class design to help Raleigh businesses stand out, grow faster, and build brands that last.</p>
+        <div class="feature-list">
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <div style="font-weight:700;margin-bottom:4px;">Local Raleigh Expertise</div>
+              <div class="body-md">We know the Raleigh market. Your designs will resonate with your local audience.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check green">✓</div>
+            <div>
+              <div style="font-weight:700;margin-bottom:4px;">Strategic, Not Just Pretty</div>
+              <div class="body-md">Every design decision is tied to your business goals and ROI.</div>
+            </div>
+          </div>
+          <div class="feature-item">
+            <div class="feature-check">✓</div>
+            <div>
+              <div style="font-weight:700;margin-bottom:4px;">Fast Turnaround</div>
+              <div class="body-md">Tight deadlines? We deliver without sacrificing quality.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal delay-2">
+        <div style="background:linear-gradient(135deg,var(--navy) 0%,var(--teal-dark) 100%); border-radius:var(--radius-xl); padding:40px; color:var(--white);">
+          <h3 class="display-sm" style="color:var(--white); margin-bottom:24px;">Our Design Process</h3>
+          <div style="display:flex;flex-direction:column;gap:20px;">
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div class="step-number" style="flex-shrink:0;">1</div>
+              <div>
+                <div style="font-weight:700;color:var(--white);margin-bottom:4px;">Discovery Call</div>
+                <div style="color:rgba(255,255,255,0.7);font-size:0.9rem;">We learn your brand, goals, and audience.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div class="step-number" style="flex-shrink:0;">2</div>
+              <div>
+                <div style="font-weight:700;color:var(--white);margin-bottom:4px;">Strategy &amp; Concepts</div>
+                <div style="color:rgba(255,255,255,0.7);font-size:0.9rem;">We develop concepts aligned to your objectives.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div class="step-number" style="flex-shrink:0;">3</div>
+              <div>
+                <div style="font-weight:700;color:var(--white);margin-bottom:4px;">Design &amp; Refine</div>
+                <div style="color:rgba(255,255,255,0.7);font-size:0.9rem;">You review, we refine until it's perfect.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:16px;align-items:flex-start;">
+              <div class="step-number" style="flex-shrink:0;">4</div>
+              <div>
+                <div style="font-weight:700;color:var(--white);margin-bottom:4px;">Launch &amp; Deliver</div>
+                <div style="color:rgba(255,255,255,0.7);font-size:0.9rem;">Print-ready files, live websites, real results.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HUMAN + AI ═══ -->
+<section class="section" style="background:linear-gradient(135deg,var(--navy-dark) 0%,#0a2a35 100%); color:var(--white);">
+  <div class="container">
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center;">
+
+      <!-- Left: copy -->
+      <div class="reveal">
+        <p class="label" style="color:var(--green);">Our Approach</p>
+        <h2 class="display-lg" style="color:var(--white); margin-bottom:20px;">
+          Human Talent &amp;<br><span style="color:var(--teal);">AI-Powered</span> Precision
+        </h2>
+        <p style="color:rgba(255,255,255,0.75); font-size:1.1rem; line-height:1.75; margin-bottom:28px;">
+          Every project we deliver is the product of two forces working in tandem: the irreplaceable creativity, strategy, and judgment of our experienced designers — and the speed, intelligence, and precision of cutting-edge AI tools.
+        </p>
+        <p style="color:rgba(255,255,255,0.6); font-size:0.97rem; line-height:1.75; margin-bottom:40px;">
+          AI helps us move faster, optimize smarter, and catch details that might otherwise slip through. Our human team ensures every decision is on-brand, every message resonates, and every piece feels genuinely crafted — not generated.
+        </p>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="contact.html" class="btn btn-primary btn-lg">Start Your Project</a>
+          <a href="website-design.html" class="btn btn-lg" style="background:rgba(255,255,255,0.08);color:#fff;border:2px solid rgba(255,255,255,0.2);">Learn More →</a>
+        </div>
+      </div>
+
+      <!-- Right: pillars -->
+      <div class="reveal delay-2">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-lg); padding:28px; display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2.2rem;">🎨</div>
+            <div style="font-weight:800; color:var(--white); font-size:1rem;">Creative Strategy</div>
+            <div style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.6;">Brand storytelling, visual design, and messaging only human expertise can truly nail.</div>
+          </div>
+          <div style="background:rgba(0,159,204,0.1); border:1px solid rgba(0,159,204,0.25); border-radius:var(--radius-lg); padding:28px; display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2.2rem;">🤖</div>
+            <div style="font-weight:800; color:var(--teal); font-size:1rem;">AI Optimization</div>
+            <div style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.6;">AI-assisted design, content refinement, SEO analysis, and performance testing at scale.</div>
+          </div>
+          <div style="background:rgba(120,185,38,0.08); border:1px solid rgba(120,185,38,0.2); border-radius:var(--radius-lg); padding:28px; display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2.2rem;">⚡</div>
+            <div style="font-weight:800; color:var(--green); font-size:1rem;">Faster Delivery</div>
+            <div style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.6;">AI accelerates our workflow so you get polished, production-ready work faster than ever.</div>
+          </div>
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:var(--radius-lg); padding:28px; display:flex; flex-direction:column; gap:12px;">
+            <div style="font-size:2.2rem;">🏆</div>
+            <div style="font-weight:800; color:var(--white); font-size:1rem;">Better Results</div>
+            <div style="font-size:0.85rem; color:rgba(255,255,255,0.55); line-height:1.6;">The combination consistently outperforms either approach alone — in quality, rankings, and ROI.</div>
+          </div>
+        </div>
+        <div style="margin-top:20px; padding:16px 24px; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-md); display:flex; align-items:center; gap:14px;">
+          <div style="font-size:1.4rem;">✦</div>
+          <div style="font-size:0.88rem; color:rgba(255,255,255,0.55); line-height:1.5;">
+            <span style="color:var(--white); font-weight:700;">Always human-reviewed.</span> Every AI-assisted output is evaluated, refined, and approved by our senior designers before it reaches you.
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Client Love</p>
+      <h2 class="display-lg">What Raleigh Businesses<br>Say About Us</h2>
+    </div>
+    <div class="grid-3">
+      <div class="testimonial reveal">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Graphic Lab transformed our brand completely. Our new brochures generate more leads than anything we've tried before. They really understand the Raleigh market."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">JM</div>
+          <div>
+            <div class="author-name">Jennifer Morris</div>
+            <div class="author-title">CEO, Pinecrest Medical Center</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal delay-1">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Our magazine went from amateur to award-winning in one redesign. The team at Graphic Lab is incredibly talented and easy to work with."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">DR</div>
+          <div>
+            <div class="author-name">David Reynolds</div>
+            <div class="author-title">Publisher, Carolina Living Magazine</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial reveal delay-2">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">"Our website redesign led to a 3x increase in qualified leads within 60 days. Best investment we've made in years. Highly recommend for any Raleigh business."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar">AK</div>
+          <div>
+            <div class="author-name">Amanda Kim</div>
+            <div class="author-title">Director of Marketing, Summit Financial</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ BLOG PREVIEW ═══ -->
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="section-header reveal">
+      <p class="label">Design Insights</p>
+      <h2 class="display-lg">From the <span class="text-teal">Blog</span></h2>
+      <p>Tips, trends, and strategies to help Raleigh businesses grow through great design.</p>
+    </div>
+    <div class="grid-3">
+      <div class="blog-card reveal">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,var(--teal-light),rgba(120,185,38,0.2));display:flex;align-items:center;justify-content:center;font-size:3rem;">📄</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Brochure Design</span>
+          <h3><a href="blog.html">5 Brochure Design Mistakes That Cost You Clients</a></h3>
+          <p class="body-md">Your brochure is often your first impression. Here's what NOT to do — and what actually works to convert readers into buyers.</p>
+          <div class="blog-meta">May 15, 2026 · 5 min read</div>
+        </div>
+      </div>
+      <div class="blog-card reveal delay-1">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,rgba(120,185,38,0.15),var(--teal-light));display:flex;align-items:center;justify-content:center;font-size:3rem;">💻</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Website Design</span>
+          <h3><a href="blog.html">How to Rank #1 on Google in Raleigh: A Local SEO Guide</a></h3>
+          <p class="body-md">Local SEO is the fastest way for small businesses to dominate Google in their area. Here's our proven framework.</p>
+          <div class="blog-meta">May 8, 2026 · 7 min read</div>
+        </div>
+      </div>
+      <div class="blog-card reveal delay-2">
+        <div class="blog-card-img" style="background:linear-gradient(135deg,rgba(26,58,108,0.1),rgba(0,159,204,0.2));display:flex;align-items:center;justify-content:center;font-size:3rem;">📖</div>
+        <div class="blog-card-body">
+          <span class="blog-tag">Magazine Design</span>
+          <h3><a href="blog.html">Annual Reports That Don't Put People to Sleep</a></h3>
+          <p class="body-md">Transform your annual report from a compliance document into a powerful brand asset that investors and clients actually want to read.</p>
+          <div class="blog-meta">April 29, 2026 · 6 min read</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px;">
+      <a href="blog.html" class="btn btn-secondary btn-lg">Read All Articles</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BANNER ═══ -->
+<section class="cta-banner">
+  <div class="container">
+    <p class="label" style="color:var(--green);margin-bottom:16px;">Ready to Stand Out?</p>
+    <h2 class="display-lg" style="color:var(--white);margin-bottom:16px;">Let's Build Something<br>Extraordinary Together</h2>
+    <p>Raleigh businesses trust Graphic Lab to make them look like the leaders they are.<br>Get a free, no-obligation quote today.</p>
+    <div class="cta-group">
+      <a href="contact.html" class="btn btn-white btn-lg">Get a Free Quote</a>
+      <a href="tel:+17045550100" class="btn btn-outline-white btn-lg">☎ Call Us Today</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Graphic Lab, Inc.">
+        <p>Bold, strategic design that elevates Raleigh brands and drives real results. Print, digital, and web — all under one roof.</p>
+        <div class="social-links mt-24">
+          <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-link" aria-label="Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram">ig</a>
+          <a href="#" class="social-link" aria-label="X / Twitter">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="brochure-design.html">Brochure Design</a>
+        <a href="magazine-design.html">Magazine Design</a>
+        <a href="website-design.html">Website Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <!-- ✏️ UPDATE with your real address, phone, email -->
+        <a href="tel:+17045550100">(704) 555-0100</a>
+        <a href="mailto:hello@graphiclab.com">hello@graphiclab.com</a>
+        <a href="#">123 Design Drive, Suite 200<br>Raleigh, NC 27601</a>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Graphic Lab, Inc. All rights reserved.</p>
+      <div style="display:flex;gap:24px;">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="main.js"></script>
+</body>
+</html>

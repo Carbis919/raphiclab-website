@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Graphic Lab, Inc. | Raleigh, NC</title>
+  <meta name="description" content="View Graphic Lab's portfolio of brochure design, magazine design, and website projects for Raleigh, NC businesses. Bold, strategic design that gets results.">
+  <link rel="canonical" href="https://www.graphiclab.com/portfolio.html">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .filter-bar { display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-bottom:48px; }
+    .filter-btn { padding:10px 24px; border-radius:980px; font-size:0.88rem; font-weight:600; border:2px solid var(--gray-300); color:var(--gray-700); cursor:pointer; transition:var(--transition); background:var(--white); }
+    .filter-btn:hover, .filter-btn.active { background:var(--teal); border-color:var(--teal); color:var(--white); }
+    .portfolio-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; }
+    .portfolio-card { border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition:var(--transition); }
+    .portfolio-card:hover { box-shadow:var(--shadow-md); transform:translateY(-4px); }
+    .portfolio-card-img { height:240px; display:flex; align-items:center; justify-content:center; flex-direction:column; gap:12px; color:white; }
+    .portfolio-card-body { padding:24px; background:var(--white); }
+    .portfolio-card-body h3 { font-weight:700; margin-bottom:6px; }
+    .portfolio-card-body p { font-size:0.88rem; color:var(--gray-500); }
+    @media(max-width:768px) { .portfolio-grid { grid-template-columns:1fr; } }
+    @media(max-width:1024px) { .portfolio-grid { grid-template-columns:repeat(2,1fr); } }
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="logo.svg" alt="Graphic Lab, Inc." width="180" height="49"></a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li class="nav-dropdown">
+        <a href="#">Services</a>
+        <div class="dropdown-menu">
+          <a href="brochure-design.html">📄 Brochure Design</a>
+          <a href="magazine-design.html">📖 Magazine Design</a>
+          <a href="website-design.html">💻 Website Design</a>
+        </div>
+      </li>
+      <li><a href="portfolio.html" class="active">Portfolio</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="btn btn-primary nav-cta">Get a Free Quote</a>
+    <button class="nav-hamburger" id="hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="index.html">Home</a>
+  <a href="brochure-design.html">Brochure Design</a>
+  <a href="magazine-design.html">Magazine Design</a>
+  <a href="website-design.html">Website Design</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="blog.html">Blog</a>
+  <a href="contact.html">Contact Us</a>
+</div>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="container">
+    <p class="label">Our Work</p>
+    <h1 class="display-lg">Portfolio</h1>
+    <p class="body-lg">A showcase of our best brochure, magazine, and website design work for Raleigh businesses.</p>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section">
+  <div class="container">
+    <!-- Filter Buttons -->
+    <div class="filter-bar reveal">
+      <button class="filter-btn active" onclick="filterPortfolio('all',this)">All Work</button>
+      <button class="filter-btn" onclick="filterPortfolio('brochure',this)">Brochure Design</button>
+      <button class="filter-btn" onclick="filterPortfolio('magazine',this)">Magazine Design</button>
+      <button class="filter-btn" onclick="filterPortfolio('website',this)">Website Design</button>
+    </div>
+
+    <div class="portfolio-grid" id="portfolioGrid">
+      <!-- BROCHURE PROJECTS -->
+      <div class="portfolio-card reveal" data-category="brochure">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#1A3A6C,#009FCC);">
+          <div style="font-size:3rem;">📄</div>
+          <div style="font-weight:700;font-size:1rem;">Pinecrest Medical</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Pinecrest Medical Center</h3>
+          <p>Tri-fold patient services brochure — clean, clinical, and compelling.</p>
+          <span class="badge badge-teal" style="margin-top:12px;">Brochure Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-1" data-category="brochure">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#78B926,#1A3A6C);">
+          <div style="font-size:3rem;">🏡</div>
+          <div style="font-weight:700;font-size:1rem;">Carolina Realty</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Carolina Realty Group</h3>
+          <p>Luxury property brochure with high-impact imagery and premium finishes.</p>
+          <span class="badge badge-teal" style="margin-top:12px;">Brochure Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-2" data-category="brochure">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#009FCC,#78B926);">
+          <div style="font-size:3rem;">⚖️</div>
+          <div style="font-weight:700;font-size:1rem;">Thompson Law Firm</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Thompson & Associates Law</h3>
+          <p>Professional bi-fold brochure positioning the firm as Raleigh's premier legal team.</p>
+          <span class="badge badge-teal" style="margin-top:12px;">Brochure Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-category="brochure">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#0F2347,#009FCC);">
+          <div style="font-size:3rem;">🏋️</div>
+          <div style="font-weight:700;font-size:1rem;">Peak Performance Gym</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Peak Performance Fitness</h3>
+          <p>Bold, energetic membership brochure with strong calls to action that drives sign-ups.</p>
+          <span class="badge badge-teal" style="margin-top:12px;">Brochure Design</span>
+        </div>
+      </div>
+
+      <!-- MAGAZINE PROJECTS -->
+      <div class="portfolio-card reveal delay-1" data-category="magazine">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#78B926,#0F2347);">
+          <div style="font-size:3rem;">📖</div>
+          <div style="font-weight:700;font-size:1rem;">Carolina Living</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Carolina Living Magazine</h3>
+          <p>Full editorial redesign — 64-page quarterly lifestyle magazine for the Raleigh market.</p>
+          <span class="badge badge-green" style="margin-top:12px;">Magazine Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-2" data-category="magazine">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#1A3A6C,#78B926);">
+          <div style="font-size:3rem;">📊</div>
+          <div style="font-weight:700;font-size:1rem;">BlueStar Annual Report</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>BlueStar Technology Annual Report</h3>
+          <p>Award-winning 48-page annual report that transformed investor relations.</p>
+          <span class="badge badge-green" style="margin-top:12px;">Magazine Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-category="magazine">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#009FCC,#0F2347);">
+          <div style="font-size:3rem;">🏢</div>
+          <div style="font-weight:700;font-size:1rem;">Summit Financial</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Summit Financial Quarterly Newsletter</h3>
+          <p>Monthly client newsletter redesign — increased open rate by 40% through visual storytelling.</p>
+          <span class="badge badge-green" style="margin-top:12px;">Magazine Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-1" data-category="magazine">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#5E9320,#1A3A6C);">
+          <div style="font-size:3rem;">🎓</div>
+          <div style="font-weight:700;font-size:1rem;">Queens University</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Queens University Alumni Magazine</h3>
+          <p>Prestigious alumni publication connecting the Raleigh university community worldwide.</p>
+          <span class="badge badge-green" style="margin-top:12px;">Magazine Design</span>
+        </div>
+      </div>
+
+      <!-- WEBSITE PROJECTS -->
+      <div class="portfolio-card reveal delay-2" data-category="website">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#1A3A6C,#009FCC);">
+          <div style="font-size:3rem;">💻</div>
+          <div style="font-weight:700;font-size:1rem;">Raleigh Home Services</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Raleigh Home Services</h3>
+          <p>Local service business website — ranked #1 in Raleigh for key terms within 90 days.</p>
+          <span class="badge badge-navy" style="margin-top:12px;">Website Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal" data-category="website">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#009FCC,#78B926);">
+          <div style="font-size:3rem;">🏥</div>
+          <div style="font-weight:700;font-size:1rem;">Eastside Dental</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Eastside Dental Group</h3>
+          <p>5-page dental practice website with online booking, team pages, and local SEO dominance.</p>
+          <span class="badge badge-navy" style="margin-top:12px;">Website Design</span>
+        </div>
+      </div>
+      <div class="portfolio-card reveal delay-1" data-category="website">
+        <div class="portfolio-card-img" style="background:linear-gradient(135deg,#0F2347,#78B926);">
+          <div style="font-size:3rem;">🏗️</div>
+          <div style="font-weight:700;font-size:1rem;">Triad Contractors</div>
+        </div>
+        <div class="portfolio-card-body">
+          <h3>Triad Construction &amp; Contracting</h3>
+          <p>Heavy-construction contractor site with project gallery, bid request system, and strong local SEO.</p>
+          <span class="badge badge-navy" style="margin-top:12px;">Website Design</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="section bg-off-white">
+  <div class="container">
+    <div class="grid-4">
+      <div class="stat-block reveal">
+        <div class="stat-number" data-target="500" data-suffix="+">0</div>
+        <div class="stat-label">Projects Completed</div>
+      </div>
+      <div class="stat-block reveal delay-1">
+        <div class="stat-number" data-target="150" data-suffix="+">0</div>
+        <div class="stat-label">Raleigh Clients</div>
+      </div>
+      <div class="stat-block reveal delay-2">
+        <div class="stat-number" data-target="12" data-suffix="+">0</div>
+        <div class="stat-label">Industries Served</div>
+      </div>
+      <div class="stat-block reveal delay-3">
+        <div class="stat-number" data-target="98" data-suffix="%">0</div>
+        <div class="stat-label">Would Recommend Us</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-banner">
+  <div class="container">
+    <p class="label" style="color:var(--green);">Your Project Could Be Next</p>
+    <h2 class="display-lg" style="color:var(--white);margin-bottom:16px;">Ready to Create Something<br>Remarkable?</h2>
+    <p>Tell us about your project and get a free quote from Raleigh's design studio.</p>
+    <div class="cta-group">
+      <a href="contact.html" class="btn btn-white btn-lg">Start Your Project</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="logo.svg" alt="Graphic Lab, Inc.">
+        <p>Bold, strategic design that elevates Raleigh brands and drives real results.</p>
+        <div class="social-links mt-24">
+          <a href="#" class="social-link">in</a><a href="#" class="social-link">f</a><a href="#" class="social-link">ig</a><a href="#" class="social-link">𝕏</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="brochure-design.html">Brochure Design</a>
+        <a href="magazine-design.html">Magazine Design</a>
+        <a href="website-design.html">Website Design</a>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="tel:+17045550100">(704) 555-0100</a>
+        <a href="mailto:hello@graphiclab.com">hello@graphiclab.com</a>
+        <a href="#">Raleigh, NC 27601</a>
+      </div>
+    </div>
+  </div>
+  <div class="divider"></div>
+  <div class="container">
+    <div class="footer-bottom">
+      <p>&copy; 2026 Graphic Lab, Inc. All rights reserved.</p>
+      <div style="display:flex;gap:24px;"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+<script src="main.js"></script>
+<script>
+function filterPortfolio(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.portfolio-card').forEach(card => {
+    const show = cat === 'all' || card.dataset.category === cat;
+    card.style.display = show ? '' : 'none';
+  });
+}
+</script>
+</body>
+</html>
